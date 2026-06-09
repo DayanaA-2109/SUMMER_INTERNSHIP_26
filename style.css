@@ -1,0 +1,12 @@
+body {
+    background:
+        linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+        url('img.jpg');
+    background-size: cover;
+}
+#p1,#p2,#p3,#p4,#p5{
+    background-color: cadetblue;
+}
+#p9{
+    background-color: goldenrod;
+}
