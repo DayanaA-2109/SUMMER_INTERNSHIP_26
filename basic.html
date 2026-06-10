@@ -8,12 +8,12 @@
 <body>
     <h1 align="center">FILL YOUR INFORMATION</h1>
 
-<form>
-    <label for="name">Name:</label>
+<form onsubmit="return validform()">
+    Name:
     <input type="text" id="name" name="name">
     <br><br>
 
-    <label for="mobile">Mobile Number:</label>
+    Mobile Number:
     <input type="tel" id="mobile" name="mobile">
     <br><br>
 
@@ -26,6 +26,7 @@
     <br><br>
 
     <input type="submit" value="Submit">
+    <script src="menu.js"></script>
 </form>
 </body>
 </html>
