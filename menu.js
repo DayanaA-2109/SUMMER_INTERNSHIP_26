@@ -36,17 +36,110 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 function validform() {
-    let name = document.getElementById("name").value;
-    let mobile = document.getElementById("mobile").value;
 
-    if (/\d/.test(name)) {
-        alert("Name should not contain numbers!");
-        return false;
+    let name = document.getElementById("name").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+   
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("mobileError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("messageError").textContent = "";
+
+    let valid = true;
+
+    // Name validation
+    if(name === ""){
+        document.getElementById("nameError").textContent =
+        "This field is mandatory";
+        valid = false;
     }
-    
 
-    if (!/^\d+$/.test(mobile)) {
-        alert("Mobile number should contain only digits!");
-        return false;
+    // Mobile validation
+    if(mobile === ""){
+        document.getElementById("mobileError").textContent =
+        "This field is mandatory";
+        valid = false;
+    }
+    else if(!/^[0-9]{10}$/.test(mobile)){
+        document.getElementById("mobileError").textContent =
+        "Mobile number must contain exactly 10 digits";
+        valid = false;
+    }
+
+    // Email validation
+    if(email === ""){
+        document.getElementById("emailError").textContent =
+        "This field is mandatory";
+        valid = false;
+    }
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        document.getElementById("emailError").textContent =
+        "Enter a valid email address";
+        valid = false;
+    }
+
+    // Message validation
+    if(message === ""){
+        document.getElementById("messageError").textContent =
+        "This field is mandatory";
+        valid = false;
+    }
+
+    return valid;
+}
+function checkName() {
+    let name = document.getElementById("name").value.trim();
+    let error = document.getElementById("nameError");
+
+    if(name === ""){
+        error.textContent = "This field is mandatory";
+    }
+    else{
+        error.textContent = "";
+    }
+}
+
+function checkMobile() {
+    let mobile = document.getElementById("mobile").value.trim();
+    let error = document.getElementById("mobileError");
+
+    if(mobile === ""){
+        error.textContent = "This field is mandatory";
+    }
+    else if(!/^[0-9]{10}$/.test(mobile)){
+        error.textContent = "Mobile number must contain exactly 10 digits";
+    }
+    else{
+        error.textContent = "";
+    }
+}
+
+function checkEmail() {
+    let email = document.getElementById("email").value.trim();
+    let error = document.getElementById("emailError");
+
+    if(email === ""){
+        error.textContent = "This field is mandatory";
+    }
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        error.textContent = "Enter a valid email address";
+    }
+    else{
+        error.textContent = "";
+    }
+}
+
+function checkMessage() {
+    let message = document.getElementById("message").value.trim();
+    let error = document.getElementById("messageError");
+
+    if(message === ""){
+        error.textContent = "This field is mandatory";
+    }
+    else{
+        error.textContent = "";
     }
 }

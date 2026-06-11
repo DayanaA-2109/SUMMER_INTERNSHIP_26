@@ -2,31 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=f, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 align="center">FILL YOUR INFORMATION</h1>
 
-<form onsubmit="return validform()">
-    Name:
-    <input type="text" id="name" name="name">
-    <br><br>
+<div class="form-box">
 
-    Mobile Number:
-    <input type="tel" id="mobile" name="mobile">
-    <br><br>
+    <h1>FILL YOUR INFORMATION</h1>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email">
-    <br><br>
+    <form onsubmit="return validform()">
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="8" cols="50"></textarea>
-    <br><br>
+       <label for="name">Name:</label>
+<input type="text" id="name" name="name"
+       onblur="checkName()"
+       oninput="checkName()">
+<span id="nameError" class="error"></span>
+<br>
 
-    <input type="submit" value="Submit">
-    <script src="menu.js"></script>
-</form>
+<label for="mobile">Mobile Number:</label>
+<input type="tel" id="mobile" name="mobile"
+       onblur="checkMobile()"
+       oninput="checkMobile()">
+<span id="mobileError" class="error"></span>
+<br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"
+       onblur="checkEmail()"
+       oninput="checkEmail()">
+<span id="emailError" class="error"></span>
+<br>
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="5"
+          onblur="checkMessage()"
+          oninput="checkMessage()"></textarea>
+<span id="messageError" class="error"></span>
+<br><br>
+
+
+
+<input type="submit" value="Submit">
+
+
+    </form>
+
+</div>
+
+<script src="menu.js"></script>
+
 </body>
 </html>
