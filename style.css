@@ -46,6 +46,146 @@
     transition: transform 0.2s;
     padding: 0 5px;
 }
+.quote-section{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.quote-box{
+    width:90%;
+    max-width:1400px;
+
+    margin:40px auto;
+
+    padding:35px 50px;
+
+    background: linear-gradient(90deg, rgb(30, 60, 114), rgb(42, 82, 152));
+
+    border-radius:35px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.quote-box:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(90deg, rgb(30, 60, 114), rgb(42, 82, 152));
+}
+.skills-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+    width:90%;
+    margin:auto;
+    
+}
+
+.skills-content{
+    flex:1;
+}
+
+.skills-image {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 5px solid black;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.skills-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.skills-image:hover img {
+  transform: scale(1.2);
+}
+
+
+.skill-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin:25px 0;
+    font-size:26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:normal;
+    opacity:0;
+    transform:translateX(-80px);
+    transition:all 0.8s ease;
+}
+.skill-item strong{
+    font-weight:bold;
+}
+.skill-item.show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.tick{
+    color:#eb4b0c;
+    font-size:30px;
+    font-weight:bold;
+    flex-shrink:0;
+}
+.project-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.project-card{
+    width:400px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    transition:all 0.4s ease;
+
+    opacity:0;
+    transform:translateY(50px);
+}
+
+.project-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.project-card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-card h3{
+    font-size:18px;
+    line-height:1.4;
+    padding:10px;
+}
+
+.project-card p{
+    font-size:14px;
+    line-height:1.6;
+}
 .features {
     display: flex;
     justify-content: space-between;
@@ -71,6 +211,110 @@
 .feature-box:hover {
     transform: translateY(-8px);
     background: rgba(255,255,255,0.2);
+}
+.ed{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:50px;
+    font-size:50px;
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+}
+.edu-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+    width:90%;
+    margin:auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10px;
+}
+
+.edu-details{
+    flex:1;
+}
+
+.edu-map{
+    flex:1;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin:35px 0;
+}
+
+.edu-item{
+    display:flex;
+    align-items:center;
+    margin:35px 0;
+    opacity:0;
+    transform:translateX(-100px);
+    transition:all 2s ease;
+}
+
+.edu-item.show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.edu-item:nth-child(1){
+    animation-delay:0.2s;
+}
+
+.edu-item:nth-child(2){
+    animation-delay:0.5s;
+}
+
+.edu-item:nth-child(3){
+    animation-delay:0.8s;
+}
+
+.edu-item:nth-child(4){
+    animation-delay:0.11s;
+}
+
+.bullet{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    margin-right:20px;
+    flex-shrink:0;
+}
+
+.red{
+    background:#ed6863;
+}
+
+.yellow{
+    background:#fde164;
+}
+
+.green{
+    background:#54af0a;
+}
+
+.blue{
+    background:#ef0864;
+}
+
+.edu-item p{
+    font-size:20px;
+    margin:0;
+    text-align:left;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
 }
 
 .icon {
@@ -149,7 +393,7 @@ input[type="submit"]:hover{
     margin-top: 0.8rem;
 }
 
-/* Triangle pointer on top of mega menu */
+
 .mega-menu::before {
     content: '';
     position: absolute;
