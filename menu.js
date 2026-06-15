@@ -163,3 +163,50 @@ const observer = new IntersectionObserver((entries) => {
 items.forEach((item) => {
     observer.observe(item);
 });
+
+
+const cards = document.querySelectorAll(".card");
+
+let current = 0;
+
+function updateCarousel(){
+
+    cards.forEach((card,index)=>{
+
+        let offset = index - current;
+
+        if(offset < 0)
+            offset += cards.length;
+
+        const positions = [
+    {x:475, scale:1.2, z:10}, 
+
+    {x:850, scale:0.8, z:5},  
+
+    {x:1020, scale:0.6, z:1}, 
+
+    {x:0, scale:0.6, z:1},    
+
+    {x:170, scale:0.8, z:5}  
+];
+
+        let p = positions[offset];
+
+        card.style.left = p.x + "px";
+        card.style.transform =
+            `scale(${p.scale})`;
+        card.style.zIndex = p.z;
+    });
+}
+
+document.getElementById("next").onclick=()=>{
+    current=(current+1)%cards.length;
+    updateCarousel();
+};
+
+document.getElementById("prev").onclick=()=>{
+    current=(current-1+cards.length)%cards.length;
+    updateCarousel();
+};
+
+updateCarousel();
