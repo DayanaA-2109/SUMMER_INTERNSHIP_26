@@ -171,8 +171,8 @@
 }
 
 .project-card img{
-    width:100%;
-    height:220px;
+    width: 550px;
+    height:350px;
     object-fit:cover;
 }
 
@@ -193,6 +193,59 @@
     color: #ccc;
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
+}
+#internship{
+    width: 80%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.internship-box h2{
+    font-size: 38px;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.internship-box span{
+    color: #e0216d;
+}
+
+.line{
+    width: 190px;
+    height: 6px;
+    background: #190a6a;
+    border-radius: 20px;
+    margin: 15px auto 35px;
+}
+
+.internship-box ul{
+    list-style: none;
+    text-align: left;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.internship-box li{
+    margin-bottom: 25px;
+    font-size: 18px;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 35px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.internship-box li::before{
+    content: "✓";
+    color: rgb(12, 15, 112);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 22px;
+}
+
+.internship-box strong{
+    font-weight: 700;
 }
 .features {
     display: flex;
